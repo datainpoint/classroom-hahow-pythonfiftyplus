@@ -1,0 +1,22 @@
+[
+    {"chapter_name": "簡介", "number_of_exercises": 5},
+    {"chapter_name": "使用資料類別運算顯示與判斷", "number_of_exercises": 10},
+    {"chapter_name": "使用資料結構類別管理資料", "number_of_exercises": 10},
+    {"chapter_name": "使用流程控制管理程式區塊的執行次數", "number_of_exercises": 10},
+    {"chapter_name": "使用函數組織程式碼", "number_of_exercises": 10},
+    {"chapter_name": "使用類別組織資料與函數", "number_of_exercises": 5},
+    {"chapter_name": "使用模組包裝函數與類別", "number_of_exercises": 10},
+    {"chapter_name": "讓程式更簡潔的 Python 技巧", "number_of_exercises": 10},
+    {"chapter_name": "使用 conda 管理環境", "number_of_exercises": 1},
+    {"chapter_name": "資料科學模組 NumPy 入門", "number_of_exercises": 5},
+    {"chapter_name": "資料科學模組 Pandas 入門", "number_of_exercises": 10},
+    {"chapter_name": "資料科學模組 Matplotlib 入門", "number_of_exercises": 5},
+    {"chapter_name": "資料科學模組 Scikit-Learn 入門", "number_of_exercises": 5},
+    {"chapter_name": "資料的載入", "number_of_exercises": 5},
+    {"chapter_name": "基礎資料框操作", "number_of_exercises": 10},
+    {"chapter_name": "文字資料操作", "number_of_exercises": 5},
+    {"chapter_name": "日期時間資料操作", "number_of_exercises": 5},
+    {"chapter_name": "進階資料框操作", "number_of_exercises": 10},
+    {"chapter_name": "探索性資料分析", "number_of_exercises": 10},
+    {"chapter_name": "監督式學習", "number_of_exercises": 10}
+]
