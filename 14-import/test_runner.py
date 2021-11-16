@@ -19,7 +19,7 @@ class TestImport(unittest.TestCase):
     def test_101_import_excel_file(self):
         excel_file = ex.import_excel_file()
         self.assertIsInstance(excel_file, pandas.core.frame.DataFrame)
-        self.assertEqual(csv_excel_filefile.shape, (250, 4))
+        self.assertEqual(excel_file.shape, (250, 4))
     def test_102_import_excel_file(self):
         database_table = ex.import_database_table()
         self.assertIsInstance(database_table, pandas.core.frame.DataFrame)
