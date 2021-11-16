@@ -27,12 +27,12 @@ class KaggleSurvey2021:
                 question_indexes.append(question_index[0])
         self._question_indexes = pd.Series(question_indexes)
         unique_question_indexes = pd.Series(question_indexes).drop_duplicates().tolist()
-        multiple_response_pattern = " \(Select all that apply\).*"
+        multiple_selection_pattern = " \(Select all that apply\).*"
         multiple_choice_pattern = " - Selected Choice.*"
         questions_substituted = list()
         for question in questions:
-            question_sub_multiple_response_pattern = re.sub(pattern=multiple_response_pattern, repl="", string=question)
-            question_sub_multiple_choice_pattern = re.sub(pattern=multiple_choice_pattern, repl="", string=question_sub_multiple_response_pattern)
+            question_sub_multiple_selection_pattern = re.sub(pattern=multiple_selection_pattern, repl="", string=question)
+            question_sub_multiple_choice_pattern = re.sub(pattern=multiple_choice_pattern, repl="", string=question_sub_multiple_selection_pattern)
             questions_substituted.append(question_sub_multiple_choice_pattern)
         question_type_counts = dict()
         for question in questions_substituted:
@@ -43,7 +43,7 @@ class KaggleSurvey2021:
         question_table = pd.DataFrame()
         question_table["question_index"] = unique_question_indexes
         question_table["question_description"] = question_type_counts.keys()
-        question_table["question_type"] = ["multiple choice" if v == 1 else "multiple response" for v in question_type_counts.values()]
+        question_table["question_type"] = ["multiple choice" if v == 1 else "multiple selection" for v in question_type_counts.values()]
         return question_table
     def summarize_survey_response(self, question_index: str, order_by_value: bool=True, show_value_counts: bool=True) -> pd.Series:
         """
@@ -75,9 +75,8 @@ class KaggleSurvey2021:
             survey_response_summary = self.summarize_survey_response(question_index)
             y = survey_response_summary.index
             width = survey_response_summary.values
-            # Highlight top 3 with red
             colors = ['c' for _ in range(y.size)]
-            colors[-3:] = ['r', 'r', 'r']
+            colors[-n:] = list('r'*n)
             axes.barh(y, width, color=colors)
             axes.spines['right'].set_visible(False)
             axes.spines['top'].set_visible(False)

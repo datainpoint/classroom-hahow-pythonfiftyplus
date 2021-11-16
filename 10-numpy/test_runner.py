@@ -1,5 +1,6 @@
 import unittest
 import json
+import os
 import ipynb.fs.full.suggested_answers as ex
 import numpy as np
 
@@ -42,7 +43,7 @@ class TestNumpy(unittest.TestCase):
         np.testing.assert_equal(ex.filter_evens(np.array([1, 2, 3, 4])), np.array([2, 4]))
         np.testing.assert_equal(ex.filter_evens(np.array([0, 1, 2, 3])), np.array([0, 2]))
 
-def run_suite(test_class, chapter_index=11):
+def run_suite(test_class, chapter_index=9):
     suite = unittest.TestLoader().loadTestsFromTestCase(test_class)
     runner = unittest.TextTestRunner(verbosity=2)
     test_results = runner.run(suite)
