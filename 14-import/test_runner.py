@@ -1,6 +1,6 @@
 import unittest
 import json
-import ipynb.fs.full.suggested_answers as ex
+import ipynb.fs.full.exercises as ex
 import pandas
 
 class TestImport(unittest.TestCase):

@@ -1,6 +1,6 @@
 import unittest
 import json
-import ipynb.fs.full.suggested_answers as ex
+import ipynb.fs.full.exercises as ex
 
 class TestIntroduction(unittest.TestCase):
     def test_001_say_hello_to_python(self):

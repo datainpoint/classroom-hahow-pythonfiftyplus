@@ -1,7 +1,7 @@
 import unittest
 import json
 import os
-import ipynb.fs.full.suggested_answers as ex
+import ipynb.fs.full.exercises as ex
 import numpy as np
 
 class TestNumpy(unittest.TestCase):
