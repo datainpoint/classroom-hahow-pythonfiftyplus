@@ -62,7 +62,7 @@ class KaggleSurvey2021:
         if not show_value_counts:
             response_summary = response_summary / response_summary.sum()
         return response_summary
-    def plot_survey_summary(self, question_index: str, horizontal: bool=True) -> plt.figure:
+    def plot_survey_summary(self, question_index: str, horizontal: bool=True, n: int=3) -> plt.figure:
         """
         Plots a horizontal(default)/vertical bar for a given question index.
         Args:
