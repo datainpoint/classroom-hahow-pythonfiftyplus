@@ -1,33 +1,23 @@
 import unittest
 import json
-from testbook import testbook
+import ipynb.fs.full.exercises as ex
 
 class TestIntroduction(unittest.TestCase):
     def test_001_say_hello_to_python(self):
-        with testbook('01-introduction/exercises.ipynb', execute=True) as tb:
-            say_hello_to_python = tb.ref("say_hello_to_python")
-        self.assertEqual(say_hello_to_python(), 'Hello, Python!')
+        self.assertEqual(ex.say_hello_to_python(), 'Hello, Python!')
     def test_002_say_my_name(self):
-        with testbook('01-introduction/exercises.ipynb', execute=True) as tb:
-            say_my_name = tb.ref("say_my_name")
-        self.assertTrue(isinstance(say_my_name(), str))
+        self.assertTrue(isinstance(ex.say_my_name(), str))
     def test_003_return_my_favorite_integer(self):
-        with testbook('01-introduction/exercises.ipynb', execute=True) as tb:
-            return_my_favorite_integer = tb.ref("return_my_favorite_integer")
-        self.assertTrue(isinstance(return_my_favorite_integer(), int))
+        self.assertTrue(isinstance(ex.return_my_favorite_integer(), int))
     def test_004_return_the_first_zen_of_python(self):
-        with testbook('01-introduction/exercises.ipynb', execute=True) as tb:
-            return_the_first_zen_of_python = tb.ref("return_the_first_zen_of_python")
-        self.assertEqual(return_the_first_zen_of_python(), 'Beautiful is better than ugly.')
+        self.assertEqual(ex.return_the_first_zen_of_python(), 'Beautiful is better than ugly.')
     def test_005_return_my_favorite_zen_of_python(self):
-        with testbook('01-introduction/exercises.ipynb', execute=True) as tb:
-            return_my_favorite_zen_of_python = tb.ref("return_my_favorite_zen_of_python")
-        my_favorite_zen_of_python = return_my_favorite_zen_of_python()
-        self.assertIsInstance(my_favorite_zen_of_python, str)
+        my_favorite_zen_of_python = ex.return_my_favorite_zen_of_python()
         file_path = "01-introduction/zen_of_python.txt"
         with open(file_path, 'r') as f:
             zen_of_py = f.readlines()
         zen_of_py = [s.strip() for s in zen_of_py]
+        self.assertIsInstance(my_favorite_zen_of_python, str)
         self.assertTrue(my_favorite_zen_of_python in zen_of_py)
 
 def run_suite(test_class, chapter_index=0):
