@@ -1,5 +1,6 @@
 {
     "codeCellConfig": {
-        "lineNumbers": true
+        "lineNumbers": true,
+        "autoClosingBrackets": true
     }
 }
