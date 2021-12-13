@@ -18,12 +18,12 @@ class TestDataTypes(unittest.TestCase):
         self.assertTrue(ex.calculate_bmi(211, 110) < 25)
         self.assertTrue(ex.calculate_bmi(201, 104) >= 25)
         self.assertTrue(ex.calculate_bmi(201, 104) < 26)
-    def test_009_show_integer_with_commas(self):
-        self.assertEqual(ex.show_integer_with_commas(1000), "1,000.00")
-        self.assertEqual(ex.show_integer_with_commas(10000), "10,000.00")
-        self.assertEqual(ex.show_integer_with_commas(100000), "100,000.00")
-        self.assertEqual(ex.show_integer_with_commas(1000000), "1,000,000.00")
-        self.assertEqual(ex.show_integer_with_commas(10000000), "10,000,000.00")
+    def test_009_show_integer_with_commas_and_digits(self):
+        self.assertEqual(ex.show_integer_with_commas_and_digits(1000), "1,000.00")
+        self.assertEqual(ex.show_integer_with_commas_and_digits(10000), "10,000.00")
+        self.assertEqual(ex.show_integer_with_commas_and_digits(100000), "100,000.00")
+        self.assertEqual(ex.show_integer_with_commas_and_digits(1000000), "1,000,000.00")
+        self.assertEqual(ex.show_integer_with_commas_and_digits(10000000), "10,000,000.00")
     def test_010_convert_one_usd_to_another_currency(self):
         self.assertEqual(ex.convert_one_usd_to_another_currency("NTD", 28), "1.00 USD = 28.00 NTD")
         self.assertEqual(ex.convert_one_usd_to_another_currency("KRW", 1196), "1.00 USD = 1,196.00 KRW")
