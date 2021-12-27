@@ -1,6 +1,6 @@
 import unittest
 import json
-import ipynb.fs.full.suggested_answers as ex
+import ipynb.fs.full.exercises as ex
 
 class TestDataTypes(unittest.TestCase):
     def test_006_convert_km_to_mile(self):
@@ -31,7 +31,7 @@ class TestDataTypes(unittest.TestCase):
     def test_011_is_positive(self):
         self.assertFalse(ex.is_positive(-2))
         self.assertFalse(ex.is_positive(-1))
-        self.assertTrue(ex.is_positive(0))
+        self.assertFalse(ex.is_positive(0))
         self.assertTrue(ex.is_positive(1))
         self.assertTrue(ex.is_positive(2))
     def test_012_has_two_digits(self):
