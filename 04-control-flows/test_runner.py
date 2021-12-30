@@ -20,7 +20,6 @@ class TestControlFlows(unittest.TestCase):
         self.assertEqual(ex.check_data_structure_type((5, 5, 6, 6)), 'tuple')
         self.assertEqual(ex.check_data_structure_type({5, 6}), 'set')
         self.assertEqual(ex.check_data_structure_type({'title': 'The Shawshank Redemption', 'year': 1994}), 'dict')
-        self.assertEqual(ex.check_data_structure_type('5566'), 'str')
     def test_029_retrieve_middle_elements(self):
         self.assertEqual(ex.retrieve_middle_elements([2, 3, 5]), 3)
         self.assertEqual(ex.retrieve_middle_elements([2, 3, 5, 7]), (3, 5))
@@ -49,7 +48,7 @@ class TestControlFlows(unittest.TestCase):
         self.assertEqual(first_100_fizz_buzz[14], 'Fizz Buzz')
         self.assertEqual(first_100_fizz_buzz[-1], 'Buzz')
         self.assertEqual(first_100_fizz_buzz[-2], 'Fizz')
-        self.assertEqual(first_100_fizz_buzz[-10], 'Fizz Buzz')
+        self.assertEqual(first_100_fizz_buzz[-11], 'Fizz Buzz')
     def test_033_create_fizz_buzz_slice(self):
         self.assertEqual(ex.create_fizz_buzz_slice(1, 5), [1, 2, 'Fizz', 4, 'Buzz'])
         self.assertEqual(ex.create_fizz_buzz_slice(11, 15), [11, 'Fizz', 13, 14, 'Fizz Buzz'])
