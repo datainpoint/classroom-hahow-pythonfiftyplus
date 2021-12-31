@@ -36,7 +36,7 @@ class TestFunctions(unittest.TestCase):
     def test_042_find_primes_below_100(self):
         primes_below_100 = ex.find_primes_below_100()
         self.assertEqual(len(primes_below_100), 25)
-        self.assertEqual(len(primes_below_100), [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97])
+        self.assertEqual(primes_below_100, [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97])
     def test_043_find_the_first_n_primes(self):
         self.assertEqual(ex.find_the_first_n_primes(5), [2, 3, 5, 7, 11])
         self.assertEqual(ex.find_the_first_n_primes(10), [2, 3, 5, 7, 11, 13, 17, 19, 23, 29])
