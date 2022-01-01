@@ -20,7 +20,7 @@ class TestIntroduction(unittest.TestCase):
         self.assertIsInstance(my_favorite_zen_of_python, str)
         self.assertTrue(my_favorite_zen_of_python in zen_of_py)
 
-def run_suite(test_class, chapter_index=0):
+def run_suite(test_class, chapter_index):
     suite = unittest.TestLoader().loadTestsFromTestCase(test_class)
     runner = unittest.TextTestRunner(verbosity=2)
     test_results = runner.run(suite)
@@ -55,4 +55,4 @@ def run_suite(test_class, chapter_index=0):
     elif chapter_percentage >= 50:
         print("你已經完成「{}」章節一半以上的練習，繼續加油！".format(chapter_name))
     
-run_suite(TestIntroduction)
+run_suite(TestIntroduction, 0)

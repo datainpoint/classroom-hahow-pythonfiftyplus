@@ -62,7 +62,7 @@ class TestDataTypes(unittest.TestCase):
         self.assertFalse(ex.contain_vowels("ncnd"))
         self.assertFalse(ex.contain_vowels("rtclt"))
         
-def run_suite(test_class, chapter_index=1):
+def run_suite(test_class, chapter_index):
     suite = unittest.TestLoader().loadTestsFromTestCase(test_class)
     runner = unittest.TextTestRunner(verbosity=2)
     test_results = runner.run(suite)
@@ -97,4 +97,4 @@ def run_suite(test_class, chapter_index=1):
     elif chapter_percentage >= 50:
         print("你已經完成「{}」章節一半以上的練習，繼續加油！".format(chapter_name))
     
-run_suite(TestDataTypes)
+run_suite(TestDataTypes, 1)

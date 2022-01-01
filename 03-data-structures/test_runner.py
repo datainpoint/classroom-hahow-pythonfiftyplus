@@ -66,7 +66,7 @@ class TestDataStructures(unittest.TestCase):
         self.assertEqual(ex.find_number_of_differences({1, 3, 5, 7, 9}, {1, 3, 5, 7, 9}), 0)
         self.assertEqual(ex.find_number_of_differences({1, 3, 5, 7, 9}, {2, 4, 6, 8, 10}), 10)
         
-def run_suite(test_class, chapter_index=2):
+def run_suite(test_class, chapter_index):
     suite = unittest.TestLoader().loadTestsFromTestCase(test_class)
     runner = unittest.TextTestRunner(verbosity=2)
     test_results = runner.run(suite)
@@ -101,4 +101,4 @@ def run_suite(test_class, chapter_index=2):
     elif chapter_percentage >= 50:
         print("你已經完成「{}」章節一半以上的練習，繼續加油！".format(chapter_name))
     
-run_suite(TestDataStructures)
+run_suite(TestDataStructures, 2)
