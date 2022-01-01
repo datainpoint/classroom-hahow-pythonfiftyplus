@@ -57,7 +57,7 @@ class TestClasses(unittest.TestCase):
         self.assertEqual(common_divisors.find_common_divisors(), {1, 3})
         self.assertEqual(common_divisors.find_the_max_common_divisor(), 3)
         common_divisors = ex.CommonDivisors(4, 8)
-        self.assertEqual(common_divisors.x_divisors, {1, 2, 5})
+        self.assertEqual(common_divisors.x_divisors, {1, 2, 4})
         self.assertEqual(common_divisors.y_divisors, {1, 2, 4, 8})
         self.assertEqual(common_divisors.find_common_divisors(), {1, 2, 4})
         self.assertEqual(common_divisors.find_the_max_common_divisor(), 4)
