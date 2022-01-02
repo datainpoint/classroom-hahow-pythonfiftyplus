@@ -1,6 +1,5 @@
 import unittest
 import json
-import ipynb.fs.full.exercises as ex
 from palindromefunctions import reverse_str
 from palindromefunctions import is_palindrome
 from palindromeclass import Palindrome
