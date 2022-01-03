@@ -34,7 +34,7 @@ class TestTips(unittest.TestCase):
         self.assertEqual(index_min_max.input_list, [5, 6, 5, 6])
         self.assertEqual(index_min_max.idxmax(), [1, 3])
         self.assertEqual(index_min_max.idxmin(), [0, 2])
-        index_min_max = ex.IndexMinMax([55, 66, 5566])
+        index_min_max = ex.IndexMinMax([5, 5, 6, 6])
         self.assertEqual(index_min_max.input_list, [5, 5, 6, 6])
         self.assertEqual(index_min_max.idxmax(), [2, 3])
         self.assertEqual(index_min_max.idxmin(), [0, 1])
