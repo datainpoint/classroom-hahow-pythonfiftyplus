@@ -8,7 +8,7 @@ from mymodules.palindromefunctions import is_palindrome as mm_is_palindrome
 from mymodules.palindromeclass import Palindrome as MmPalindrome
 
 class TestModules(unittest.TestCase):
-    def test_046_functions_in_module(self):
+    def test_056_functions_in_module(self):
         self.assertEqual(reverse_str("eye"), 'eye')
         self.assertEqual(reverse_str("dad"), 'dad')
         self.assertEqual(reverse_str("dye"), 'eyd')
@@ -17,7 +17,7 @@ class TestModules(unittest.TestCase):
         self.assertTrue(is_palindrome("dad"))
         self.assertFalse(is_palindrome("dye"))
         self.assertFalse(is_palindrome("mad"))
-    def test_047_classes_in_module(self):
+    def test_057_classes_in_module(self):
         palindrome = Palindrome("eye")
         self.assertEqual(palindrome.original_str, 'eye')
         self.assertEqual(palindrome.reversed_str, 'eye')
@@ -26,7 +26,7 @@ class TestModules(unittest.TestCase):
         self.assertEqual(palindrome.original_str, 'dye')
         self.assertEqual(palindrome.reversed_str, 'eyd')
         self.assertFalse(palindrome.is_palindrome())
-    def test_048_folder_as_module(self):
+    def test_058_folder_as_module(self):
         self.assertEqual(mm_reverse_str("eye"), 'eye')
         self.assertEqual(mm_reverse_str("dad"), 'dad')
         self.assertEqual(mm_reverse_str("dye"), 'eyd')
