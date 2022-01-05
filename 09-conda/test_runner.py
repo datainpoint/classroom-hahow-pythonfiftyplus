@@ -4,12 +4,12 @@ import subprocess
 
 class TestConda(unittest.TestCase):
     def test_069_python3712(self):
-        cmd = '. $CONDA_PREFIX/etc/profile.d/conda.sh && conda activate python3712 && python --version' 
-        result = subprocess.run(cmd, shell=True, executable='/bin/bash', capture_output=True).stdout.decode('utf-8').strip()
+        cmd = '. /srv/conda/etc/profile.d/conda.sh && conda activate python3712 && python --version'  
+        result = subprocess.getoutput(cmd)
         self.assertEqual(result, "Python 3.7.12")
     def test_070_python3615(self):
-        cmd = '. $CONDA_PREFIX/etc/profile.d/conda.sh && conda activate python3615 && python --version' 
-        result = subprocess.run(cmd, shell=True, executable='/bin/bash', capture_output=True).stdout.decode('utf-8').strip()
+        cmd = '. /srv/conda/etc/profile.d/conda.sh && conda activate python3615 && python --version'  
+        result = subprocess.getoutput(cmd)
         self.assertEqual(result, "Python 3.6.15")
 
 def run_suite(test_class, chapter_index):
