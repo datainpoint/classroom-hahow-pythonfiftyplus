@@ -7,7 +7,7 @@
     {"chapter_name": "使用類別組織函數與資料", "number_of_exercises": 10},
     {"chapter_name": "使用模組包裝函數與類別", "number_of_exercises": 3},
     {"chapter_name": "讓程式更簡潔的 Python 技巧", "number_of_exercises": 10},
-    {"chapter_name": "使用 conda 管理環境", "number_of_exercises": 1},
+    {"chapter_name": "使用 conda 管理環境", "number_of_exercises": 2},
     {"chapter_name": "資料科學模組 NumPy 入門", "number_of_exercises": 10},
     {"chapter_name": "資料科學模組 Pandas 入門", "number_of_exercises": 10},
     {"chapter_name": "資料科學模組 Matplotlib 入門", "number_of_exercises": 10},
