@@ -26,7 +26,7 @@ class TestSklearn(unittest.TestCase):
         input_ndarray = np.arange(10).reshape(-1, 1)
         self.assertEqual(ex.standardize_a_ndarray(input_ndarray).shape, (10, 1))
     def test_106_get_standard_scalers_attributes(self):
-        input_ndarray = np.arange(1, 10).reshape(-1, 1)
+        input_ndarray = np.arange(10).reshape(-1, 1)
         mu, sigma = ex.get_standard_scalers_attributes(input_ndarray)
         self.assertTrue(mu >= 4.5)
         self.assertTrue(sigma >= 2.8)
@@ -37,7 +37,7 @@ class TestSklearn(unittest.TestCase):
         input_ndarray = np.arange(10).reshape(-1, 1)
         self.assertEqual(ex.min_max_a_ndarray(input_ndarray).shape, (10, 1))
     def test_109_get_minmax_scalers_attributes(self):
-        input_ndarray = np.arange(1, 10).reshape(-1, 1)
+        input_ndarray = np.arange(10).reshape(-1, 1)
         Xmin, Xmax = ex.get_minmax_scalers_attributes(input_ndarray)
         self.assertAlmostEqual(Xmin, 0.0)
         self.assertAlmostEqual(Xmax, 9.0)
