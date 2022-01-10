@@ -2,62 +2,77 @@ import unittest
 import json
 import ipynb.fs.full.exercises as ex
 import numpy as np
-import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+from PIL import Image
 
-class TestPandas(unittest.TestCase):
-    def test_81_create_first_five_evens_index(self):
-        first_five_evens_index = ex.create_first_five_evens_index()
-        self.assertEqual(first_five_evens_index.size, 5)
-        self.assertEqual(first_five_evens_index[0], 0)
-        self.assertEqual(first_five_evens_index[-1], 8)
-    def test_82_create_a_str_index(self):
-        a_str_index = ex.create_a_str_index()
-        self.assertEqual(a_str_index.size, 5)
-        self.assertEqual(a_str_index[0], '1st')
-        self.assertEqual(a_str_index[-1], '5th')
-    def test_83_create_first_five_evens_series(self):
-        first_five_evens_series = ex.create_first_five_evens_series()
-        self.assertEqual(first_five_evens_series.size, 5)
-        self.assertEqual(first_five_evens_series[0], 0)
-        self.assertEqual(first_five_evens_series[4], 8)
-        self.assertIsInstance(first_five_evens_series, pd.core.series.Series)
-    def test_84_update_first_five_evens_series_index(self):
-        updated_first_five_evens_series_index = ex.update_first_five_evens_series_index()
-        self.assertIsInstance(updated_first_five_evens_series_index, pd.core.series.Series)
-        pd.testing.assert_index_equal(updated_first_five_evens_series_index.index, pd.Index(['1st', '2nd', '3rd', '4th', '5th']))
-        np.testing.assert_array_equal(updated_first_five_evens_series_index.values, np.array([0, 2, 4, 6, 8]))
-    def test_85_create_first_five_odds_series(self):
-        first_five_odds_series = ex.create_first_five_odds_series()
-        self.assertIsInstance(first_five_odds_series, pd.core.series.Series)
-        pd.testing.assert_index_equal(first_five_odds_series.index, pd.Index(['1st', '2nd', '3rd', '4th', '5th']))
-        np.testing.assert_array_equal(first_five_odds_series.values, np.array([1, 3, 5, 7, 9]))
-    def test_86_create_first_five_primes_series(self):
-        first_five_primes_series = ex.create_first_five_primes_series()
-        self.assertIsInstance(first_five_primes_series, pd.core.series.Series)
-        pd.testing.assert_index_equal(first_five_primes_series.index, pd.Index(['1st', '2nd', '3rd', '4th', '5th']))
-        np.testing.assert_array_equal(first_five_primes_series.values, np.array([2, 3, 5, 7, 11]))
-    def test_87_create_first_five_integer_dataframe(self):
-        first_five_integer_dataframe = ex.create_first_five_integer_dataframe()
-        self.assertIsInstance(first_five_integer_dataframe, pd.core.frame.DataFrame)
-        pd.testing.assert_index_equal(first_five_integer_dataframe.index, pd.Index(['1st', '2nd', '3rd', '4th', '5th']))
-        self.assertEqual(first_five_integer_dataframe.shape, (5, 3))
-    def test_88_create_lord_of_the_rings_dataframe(self):
-        lord_of_the_rings_dataframe = ex.create_lord_of_the_rings_dataframe()
-        self.assertIsInstance(lord_of_the_rings_dataframe, pd.core.frame.DataFrame)
-        self.assertEqual(lord_of_the_rings_dataframe.shape, (3, 4))
-    def test_89_create_dark_knight_dataframe(self):
-        dark_knight_dataframe = ex.create_dark_knight_dataframe()
-        self.assertIsInstance(dark_knight_dataframe, pd.core.frame.DataFrame)
-        self.assertEqual(dark_knight_dataframe.shape, (3, 4))
-    def test_90_summarize_dataframe_with_dict(self):
-        lord_of_the_rings_dataframe = ex.create_lord_of_the_rings_dataframe()
-        dark_knight_dataframe = ex.create_dark_knight_dataframe()
-        summary = ex.summarize_dataframe_with_dict(lord_of_the_rings_dataframe)
-        self.assertEqual(summary["shape"], (3, 4))
-        pd.testing.assert_index_equal(summary["columns"], pd.Index(['title', 'director', 'imdb_rating', 'release_year']))
-        summary = ex.summarize_dataframe_with_dict(dark_knight_dataframe)
-        self.assertEqual(summary["shape"], (3, 4))
-        pd.testing.assert_index_equal(summary["columns"], pd.Index(['title', 'director', 'imdb_rating', 'release_year']))
+class TestMatplotlib(unittest.TestCase):
+    def test_91_create_x_cosx_ndarray(self)
+        x, cosx = ex.create_x_cosx_ndarray()
+        self.assertIsInstance(x, np.ndarray)
+        self.assertIsInstance(cosx, np.ndarray)
+        self.assertEqual(x.size, 100)
+        self.assertEqual(cosx.size, 100)
+    def test_92_create_figure_and_axes_subplot(self):
+        fig, ax = ex.create_figure_and_axes_subplot()
+        self.assertIsInstance(fig, mpl.figure.Figure)
+        self.assertIsInstance(ax, mpl.axes._subplots.AxesSubplot)
+    def test_93_export_x_cosx_png(self):
+        ex.export_x_cosx_png()
+        im = Image.open("xcosx.png")
+        self.assertEqual(im.format, 'PNG')
+        im_test = Image.open("xcosx_test.png")
+        diff_sum = (np.array(im) - np.array(im_test)).sum()
+        self.assertEqual(diff_sum, 0)
+    def test_94_export_x_cosx_jpg(self):
+        ex.export_x_cosx_jpg()
+        im = Image.open("xcosx.jpg")
+        self.assertEqual(im.format, 'JPEG')
+        im_test = Image.open("xcosx_test.jpg")
+        diff_sum = (np.array(im) - np.array(im_test)).sum()
+        self.assertEqual(diff_sum, 0)
+    def test_95_create_x_tanx_ndarray(self):
+        x, tanx = ex.create_x_tanx_ndarray()
+        self.assertIsInstance(x, np.ndarray)
+        self.assertIsInstance(tanx, np.ndarray)
+        self.assertEqual(x.size, 10000)
+        self.assertEqual(tanx.size, 10000)
+    def test_96_create_adjusted_x_tanx_ndarray(self):
+        adjusted_x, adjusted_tanx = ex.create_adjusted_x_tanx_ndarray()
+        self.assertIsInstance(adjusted_x, np.ndarray)
+        self.assertIsInstance(adjusted_tanx, np.ndarray)
+        self.assertEqual(adjusted_x.size, 10000)
+        self.assertEqual(adjusted_tanx.size, 10000)
+        self.assertTrue(adjusted_x[0] > 0.5 * np.pi)
+        self.assertTrue(adjusted_x[-1] < 1.5 * np.pi)
+    def test_97_export_x_tanx_png(self):
+        ex.export_x_tanx_png()
+        im = Image.open("xtanx.png")
+        self.assertEqual(im.format, 'PNG')
+        im_test = Image.open("xtanx_test.png")
+        diff_sum = (np.array(im) - np.array(im_test)).sum()
+        self.assertEqual(diff_sum, 0)
+    def test_98_export_x_tanx_jpg(self):
+        ex.export_x_tanx_jpg()
+        im = Image.open("xtanx.jpg")
+        self.assertEqual(im.format, 'JPEG')
+        im_test = Image.open("xtanx_test.jpg")
+        diff_sum = (np.array(im) - np.array(im_test)).sum()
+        self.assertEqual(diff_sum, 0)
+    def test_99_export_x_tanx_png_with_title(self):
+        ex.export_x_tanx_png_with_title()
+        im = Image.open("xtanx_with_title.png")
+        self.assertEqual(im.format, 'PNG')
+        im_test = Image.open("xtanx_with_title_test.png")
+        diff_sum = (np.array(im) - np.array(im_test)).sum()
+        self.assertEqual(diff_sum, 0)
+    def test_100_export_x_tanx_png_with_title(self):
+        ex.export_x_tanx_png_with_title()
+        im = Image.open("xtanx_final.png")
+        self.assertEqual(im.format, 'PNG')
+        im_test = Image.open("xtanx_final_test.png")
+        diff_sum = (np.array(im) - np.array(im_test)).sum()
+        self.assertEqual(diff_sum, 0)
 
 def run_suite(test_class, chapter_index):
     suite = unittest.TestLoader().loadTestsFromTestCase(test_class)
@@ -94,4 +109,4 @@ def run_suite(test_class, chapter_index):
     elif chapter_percentage >= 50:
         print("你已經完成「{}」章節一半以上的練習，繼續加油！".format(chapter_name))
     
-run_suite(TestPandas, 10)
+run_suite(TestMatplotlib, 11)
