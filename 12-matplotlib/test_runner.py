@@ -20,14 +20,14 @@ class TestMatplotlib(unittest.TestCase):
         ex.export_x_cosx_png()
         im = Image.open("xcosx.png")
         self.assertEqual(im.format, 'PNG')
-        im_test = Image.open("/home/jovyan/test_images/xcosx.png")
+        im_test = Image.open("/home/jovyan/test-images/xcosx.png")
         diff_sum = (np.array(im) - np.array(im_test)).sum()
         self.assertEqual(diff_sum, 0)
     def test_094_export_x_cosx_jpg(self):
         ex.export_x_cosx_jpg()
         im = Image.open("xcosx.jpg")
         self.assertEqual(im.format, 'JPEG')
-        im_test = Image.open("/home/jovyan/test_images/xcosx.jpg")
+        im_test = Image.open("/home/jovyan/test-images/xcosx.jpg")
         diff_sum = (np.array(im) - np.array(im_test)).sum()
         self.assertEqual(diff_sum, 0)
     def test_095_create_x_tanx_ndarray(self):
@@ -48,28 +48,28 @@ class TestMatplotlib(unittest.TestCase):
         ex.export_x_tanx_png()
         im = Image.open("xtanx.png")
         self.assertEqual(im.format, 'PNG')
-        im_test = Image.open("/home/jovyan/test_images/xtanx.png")
+        im_test = Image.open("/home/jovyan/test-images/xtanx.png")
         diff_sum = (np.array(im) - np.array(im_test)).sum()
         self.assertEqual(diff_sum, 0)
     def test_098_export_x_tanx_jpg(self):
         ex.export_x_tanx_jpg()
         im = Image.open("xtanx.jpg")
         self.assertEqual(im.format, 'JPEG')
-        im_test = Image.open("/home/jovyan/test_images/xtanx.jpg")
+        im_test = Image.open("/home/jovyan/test-images/xtanx.jpg")
         diff_sum = (np.array(im) - np.array(im_test)).sum()
         self.assertEqual(diff_sum, 0)
     def test_099_export_x_tanx_png_with_title(self):
         ex.export_x_tanx_png_with_title()
         im = Image.open("xtanx_with_title.png")
         self.assertEqual(im.format, 'PNG')
-        im_test = Image.open("/home/jovyan/test_images/xtanx_with_title.png")
+        im_test = Image.open("/home/jovyan/test-images/xtanx_with_title.png")
         diff_sum = (np.array(im) - np.array(im_test)).sum()
         self.assertEqual(diff_sum, 0)
     def test_100_export_x_tanx_png_final(self):
         ex.export_x_tanx_png_final()
         im = Image.open("xtanx_final.png")
         self.assertEqual(im.format, 'PNG')
-        im_test = Image.open("/home/jovyan/test_images/xtanx_final.png")
+        im_test = Image.open("/home/jovyan/test-images/xtanx_final.png")
         diff_sum = (np.array(im) - np.array(im_test)).sum()
         self.assertEqual(diff_sum, 0)
 
@@ -101,7 +101,7 @@ def run_suite(test_class, chapter_index):
             print("太棒了，你已經完成「Python 的 50+ 練習」的第一階段：Python 程式設計的基礎觀念，接下來還有三個階段等你來挑戰！")
         elif chapter_index == 8:
             print("表現得非常好，你已經完成「Python 的 50+ 練習」的第二階段：Python 程式設計的進階觀念，接著讓我們邁向資料科學！")
-        elif chapter_index == 13:
+        elif chapter_index == 12:
             print("太令人佩服，你已經完成「Python 的 50+ 練習」的第三階段：Python 資料科學的基礎，距離完課只剩下最後一哩路！")
     elif chapter_percentage == 100 and chapter_index == 19:
         print("恭喜完課，你已經完成「{}」所有習題，能夠堅持到底完成所有的教學影片與練習題真是非常了不起！後面已經沒有練習題了，你現在是一位擅長寫程式處理資料的分析師！")
