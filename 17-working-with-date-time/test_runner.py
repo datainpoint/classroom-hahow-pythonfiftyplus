@@ -25,11 +25,11 @@ class TestWorkingWithDateTime(unittest.TestCase):
         self.assertEqual(ex.get_yesterdays_date("2022-01-02"), date(2022, 1, 1))
         self.assertEqual(ex.get_yesterdays_date("2022-01-01"), date(2021, 12, 31))
     def test_145_get_a_second_before_datetime(self):
-        self.assertEqual(ex.test_145_get_a_second_before_datetime("2022-01-01 00:00:01"), datetime(2022, 1, 1, 0, 0, 0))
-        self.assertEqual(ex.test_145_get_a_second_before_datetime("2022-01-01 00:00:00"), datetime(2021, 12, 31, 23, 59, 59))
+        self.assertEqual(ex.get_a_second_before_datetime("2022-01-01 00:00:01"), datetime(2022, 1, 1, 0, 0, 0))
+        self.assertEqual(ex.get_a_second_before_datetime("2022-01-01 00:00:00"), datetime(2021, 12, 31, 23, 59, 59))
     def test_146_show_a_non_iso8601_date(self):
         self.assertEqual(ex.show_a_non_iso8601_date(2021, 12, 31), 'Fri Dec 31')
-        self.assertEqual(ex.show_a_non_iso8601_date(2021, 1, 1), 'Sat Jan 01')
+        self.assertEqual(ex.show_a_non_iso8601_date(2022, 1, 1), 'Sat Jan 01')
     def test_147_parse_a_non_iso8601_datetime(self):
         self.assertEqual(ex.parse_a_non_iso8601_datetime("Fri Dec 31 21 23:59:59"), '2021-12-31 23:59:59')
         self.assertEqual(ex.parse_a_non_iso8601_datetime("Sat Jan 01 22 00:00:01"), '2022-01-01 00:00:01')
