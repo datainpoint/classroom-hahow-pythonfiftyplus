@@ -66,8 +66,8 @@ class TestWorkingWithText(unittest.TestCase):
         pd.testing.assert_series_equal(ex.replace_series_asterisks(province_states), pd.Series([np.nan, "Crimea Republic", "Sevastopol"]))
         country_regions = pd.Series(["Taiwan*", "Ukraine", "Ukraine"])
         pd.testing.assert_series_equal(ex.replace_series_asterisks(country_regions), pd.Series(["Taiwan", "Ukraine", "Ukraine"]))
-        combined_keys = pd.Series(["Taiwan*", "Crimea Republic*, Ukraine", "Sevastopol*, Ukrain"])
-        pd.testing.assert_series_equal(ex.replace_series_asterisks(combined_keys), pd.Series(["Taiwan", "Crimea Republic, Ukraine", "Sevastopol, Ukrain"]))
+        combined_keys = pd.Series(["Taiwan*", "Crimea Republic*, Ukraine", "Sevastopol*, Ukraine"])
+        pd.testing.assert_series_equal(ex.replace_series_asterisks(combined_keys), pd.Series(["Taiwan", "Crimea Republic, Ukraine", "Sevastopol, Ukraine"]))
     def test_140_import_lookup_table(self):
         ex.export_lookup_table()
         lookup_table = pd.read_csv("lookup_table.csv")
