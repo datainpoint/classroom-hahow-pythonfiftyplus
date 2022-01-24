@@ -16,7 +16,7 @@
     {"chapter_name": "基礎資料框操作", "number_of_exercises": 10},
     {"chapter_name": "文字資料操作", "number_of_exercises": 10},
     {"chapter_name": "日期時間資料操作", "number_of_exercises": 10},
-    {"chapter_name": "進階資料框操作", "number_of_exercises": 10},
+    {"chapter_name": "進階資料框操作", "number_of_exercises": 20},
     {"chapter_name": "探索性資料分析", "number_of_exercises": 10},
-    {"chapter_name": "監督式學習", "number_of_exercises": 10}
+    {"chapter_name": "監督式學習", "number_of_exercises": 20}
 ]
