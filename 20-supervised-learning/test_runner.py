@@ -64,9 +64,6 @@ class TestSupervisedLearning(unittest.TestCase):
         self.assertTrue("dummy" in model_performance_house_prices.keys())
         self.assertTrue("expert" in model_performance_house_prices.keys())
         self.assertTrue("machine_learning" in model_performance_house_prices.keys())
-        self.assertTrue(type(model_performance_house_prices["dummy"]) == float)
-        self.assertTrue(type(model_performance_house_prices["expert"]) == float)
-        self.assertTrue(type(model_performance_house_prices["machine_learning"]) == float)
     def test_189_predict_sale_price(self):
         train, test = ex.import_house_prices()
         X_test = test[["Id", "OverallQual"]]
@@ -128,7 +125,7 @@ class TestSupervisedLearning(unittest.TestCase):
         X_wrangled = ex.wrangle_feature_matrix_titanic(X)
         X_train, X_valid, y_train, y_valid = ex.split_train_valid_titanic(X_wrangled, y)
         machine_learning_model_titanic = ex.MachineLearningModelTitanic()
-        machine_learning_model_titanic.fit(X_train)
+        machine_learning_model_titanic.fit(X_train, y_train)
         y_hat = machine_learning_model_titanic.predict(X_valid)
         self.assertEqual(y_hat.shape, (268,))
     def test_199_validate_model_performance_titanic(self):
@@ -150,9 +147,6 @@ class TestSupervisedLearning(unittest.TestCase):
         self.assertTrue("dummy" in model_performance_titanic.keys())
         self.assertTrue("expert" in model_performance_titanic.keys())
         self.assertTrue("machine_learning" in model_performance_titanic.keys())
-        self.assertTrue(type(model_performance_titanic["dummy"]) == int)
-        self.assertTrue(type(model_performance_titanic["expert"]) == int)
-        self.assertTrue(type(model_performance_titanic["machine_learning"]) == int)
     def test_200_predict_survived(self):
         train, test = ex.import_titanic()
         X_test = test[["PassengerId", "Sex", "Age"]]
