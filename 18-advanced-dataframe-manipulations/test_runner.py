@@ -93,7 +93,7 @@ class TestAdvancedDataframeManipulations(unittest.TestCase):
         votes_by_candidates = ex.sum_votes_by_candidates()
         self.assertIsInstance(votes_by_candidates, pd.core.series.Series)
         self.assertEqual(votes_by_candidates.size, 3)
-    def test_170_sum_votes_by_candidates(self):
+    def test_170_sum_votes_by_town_candidates(self):
         votes_by_town_candidates = ex.sum_votes_by_town_candidates()
         self.assertIsInstance(votes_by_town_candidates, pd.core.frame.DataFrame)
         self.assertEqual(votes_by_town_candidates.shape, (36, 4))
