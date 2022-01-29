@@ -89,12 +89,10 @@ class TestSupervisedLearning(unittest.TestCase):
         y, X = ex.extract_target_array_feature_matrix_titanic()
         self.assertEqual(y.shape, (891,))
         self.assertEqual(X.shape, (891, 2))
-    def test_194_extract_target_array_feature_matrix_titanic(self):
+    def test_194_wrangle_feature_matrix_titanic(self):
         y, X = ex.extract_target_array_feature_matrix_titanic()
         X_wrangled = ex.wrangle_feature_matrix_titanic(X)
         self.assertEqual(np.unique(X_wrangled[:, 0]).size, 2)
-        self.assertTrue(0 in np.unique(X_wrangled[:, 0]))
-        self.assertTrue(1 in np.unique(X_wrangled[:, 0]))
         self.assertEqual(np.sum(np.isnan(X_wrangled[:, 1])), 0)
     def test_195_split_train_valid_titanic(self):
         y, X = ex.extract_target_array_feature_matrix_titanic()
