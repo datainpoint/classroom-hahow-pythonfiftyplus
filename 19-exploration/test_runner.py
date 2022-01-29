@@ -46,7 +46,7 @@ class TestExploration(unittest.TestCase):
         deaths_by_date = ex.sum_deaths_by_date()
         self.assertIsInstance(deaths_by_date, pd.core.series.Series)
         self.assertEqual(deaths_by_date.size, 731)
-    def test_179_sum_deaths_by_date(self):
+    def test_179_merge_confirmed_deaths_series(self):
         merged_confirmed_deaths = ex.merge_confirmed_deaths_series()
         self.assertIsInstance(merged_confirmed_deaths, pd.core.frame.DataFrame)
         self.assertEqual(merged_confirmed_deaths.shape, (731, 2))
