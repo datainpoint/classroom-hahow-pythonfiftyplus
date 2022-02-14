@@ -1,3 +1,6 @@
+import unittest
+import json
+
 def run_suite(test_class, chapter_index):
     suite = unittest.TestLoader().loadTestsFromTestCase(test_class)
     runner = unittest.TextTestRunner(verbosity=2)

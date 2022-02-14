@@ -1,7 +1,6 @@
 import unittest
-import json
 import ipynb.fs.full.exercises as ex
-from testfunction import run_suite
+import importlib.util
 
 class TestIntroduction(unittest.TestCase):
     def test_001_say_hello_to_python(self):
@@ -21,4 +20,7 @@ class TestIntroduction(unittest.TestCase):
         self.assertIsInstance(my_favorite_zen_of_python, str)
         self.assertTrue(my_favorite_zen_of_python in zen_of_py)
     
-run_suite(TestIntroduction, 0)
+spec = importlib.util.spec_from_file_location("testfunction.py", "/home/jovyan/testfunction.py")
+test_function = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(test_function)
+test_function.run_suite(TestIntroduction, 0)
