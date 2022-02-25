@@ -3,11 +3,6 @@ import ipynb.fs.full.exercises as ex
 import importlib.util
 import numpy as np
 import sklearn
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.preprocessing import StandardScaler
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.linear_model import LinearRegression
-from sklearn.linear_model import LogisticRegression
 
 class TestSklearn(unittest.TestCase):
     def test_101_create_a_polynomial_feature(self):

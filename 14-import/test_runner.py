@@ -2,7 +2,6 @@ import unittest
 import ipynb.fs.full.exercises as ex
 import importlib.util
 import pandas as pd
-import sqlite3
 
 class TestImport(unittest.TestCase):
     def test_111_import_txt_file(self):

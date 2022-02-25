@@ -48,4 +48,4 @@ class TestBasicDataframeManipulations(unittest.TestCase):
 spec = importlib.util.spec_from_file_location("testfunction.py", "/home/jovyan/testfunction.py")
 test_function = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(test_function)
-test_function.run_suite(TestBasicDataframeManipulations, 14)    
+test_function.run_suite(TestBasicDataframeManipulations, 14)

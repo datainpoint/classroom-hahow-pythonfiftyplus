@@ -2,7 +2,6 @@ import unittest
 import ipynb.fs.full.exercises as ex
 import importlib.util
 import numpy as np
-import matplotlib.pyplot as plt
 import matplotlib as mpl
 from PIL import Image
 
