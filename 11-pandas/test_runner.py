@@ -1,6 +1,8 @@
 import unittest
 import ipynb.fs.full.exercises as ex
 import importlib.util
+import pandas as pd
+import numpy as np
 
 class TestPandas(unittest.TestCase):
     def test_081_create_first_five_evens_index(self):
